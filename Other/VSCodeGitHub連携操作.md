@@ -60,7 +60,7 @@
 
 - リモートリポジトリの利用のためのフォルダと、GitHubで作成したリポジトリが紐づいているため、新しくリポジトリを作成する場合はこの手順をまた行う必要がある  
 
-# リンク  
+---
 
 参考：[【入門】VSCodeとGitHubの連携手順・使い方をわかりやすく解説](https://www.kagoya.jp/howto/rentalserver/webtrend/vscode/)
 
