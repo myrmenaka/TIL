@@ -4,11 +4,11 @@
 ★VSCodeでHTMLの作業ページで「タグ＃id名→tab」「タグ.class名→tab」でclassがついた状態でタグが生成されるショートカット  
 ### 1.　id　→　＃  
 ```html
-//HTML
+/* html */
 <p id="text">text</p>
 ```
 ```css
-//CSS
+/* CSS */
 #text {
     color: red;
 }
@@ -16,11 +16,11 @@
 ​
 ### 2.　class　→　.  
 ```html
-//HTML
+/* html */
 <p class="text">text</p>
 ```
 ```css
-//CSS
+/* CSS */
 .text {
     color: green;
 }
@@ -35,7 +35,6 @@ idはHTMLページに1個しか同じものは存在してはいけない
 ## 疑似クラスセレクタ  
 `:hover`：マウスカーソルをのせた時だけスタイルをあてる  
 ```css
-//CSS
 a:hover {
     color: red;　　　→リンク
 }
@@ -44,7 +43,7 @@ a:hover {
 ## 小セレクタ・子孫セレクタ  
 `子孫セレクタ`：親セレクタの中に入っているタグに設定する  
 ```html
-//HTML
+/* html */
     <div class="parent">
         <p>text</p>　←ここのpタグも反映される
         <div>
@@ -55,7 +54,7 @@ a:hover {
     </div>
 ```
 ```css​
-//CSS
+/* CSS */
 .parent p {
     color: red;
 }
@@ -66,7 +65,7 @@ a:hover {
 ### 小セレクタ：親要素の直下にある  
 親セレクタの真下にないと反映されない  
 ```html
-//HTML
+/* html */
     <div class="parent">
         <p>text</p>　←ここのpタグは反映される
         <div>
@@ -77,7 +76,7 @@ a:hover {
     </div>
 ```
 ```css
-//CSS
+/* CSS */
 .parent > p {
     color: green;
 }
@@ -88,12 +87,12 @@ a:hover {
 
 ### 複数のセレクタに同時に同じCSSを当てたい時  
 ```html
-//HTML
+/* HTML */
     <div class="abc">text</div>
     <div class="def">text</div>
 ```
 ```css
-//CSS
+/* CSS */
 .abc,
 .def {
     
@@ -103,11 +102,11 @@ a:hover {
 
 ### 両クラスが揃った時にこのスタイルを当てる時
 ```html
-//HTML
+/* html */
 <div class="def xyz">text</div>
 ```
 ```css
-//CSS
+/* CSS */
 .def.xyz {
     
 }
@@ -117,7 +116,6 @@ a:hover {
 
 ### セレクタとクラスの組み合わせもできる  
 ```css
-//CSS
 div.def {
     　　　　　→divタグかつ、defというクラスに反映
     　　　　　　Pタグのdefには反映されない
@@ -126,12 +124,12 @@ div.def {
 
 ### セレクタの隣にclassを当てる
 ```html
-//HTML
+/* HTML */
     <div class="def">text</div>
     <a href="">link</a>
 ```
 ```css
-//CSS
+/* CSS */
 .def + a {
     
 }
@@ -146,7 +144,7 @@ div.def {
 
 ### Q.1　「.abc」直下の子要素の隣のｐタグのみに｛color: red;｝  
 ```html
-//HTML
+/* html */
 		    <div class="abc">  →ここの
         text
         <ul>　→直下の子要素
@@ -158,7 +156,7 @@ div.def {
 ```
 A.  
 ```css
-//CSS
+/* CSS */
 .abc > ul + p {
     color: red;
 }
@@ -166,7 +164,7 @@ A.
 ​
 ### Q.2　「.abc」直下の<a>タグのみにカーソルを乗せた時だけ｛color: red;｝  
 ```html
-//HTML
+/* html */
     <div class="abc">
         text
         <ul>
@@ -181,7 +179,7 @@ A.
 ```
 A.  
 ```css
-//CSS
+/* CSS */
 .abc > a:hover {　←カーソルを当てたときの色は:hover
     color: red;
 }
