@@ -30,8 +30,46 @@
 // };
 
 // 九九表を出力
-for($i = 1; $i <= 9; $i++){
-    for($j = 1; $j <= 9; $j++){
-        echo "{$i} × {$j} = ". ($i*$j) . PHP_EOL;
-    };
+// for($i = 1; $i <= 9; $i++){
+//     for($j = 1; $j <= 9; $j++){
+//         echo "{$i} × {$j} = ". ($i*$j) . PHP_EOL;
+//     };
+// };
+
+// 曜日表示
+// $day = 1;
+// switch ($day) {
+//     case 1:
+//         echo "月曜日";
+//         break;
+//     case 2:
+//         echo "火曜日";
+//         break;
+//     case 3:
+//         echo "水曜日";
+//         break;
+//     case 4:
+//         echo "木曜日";
+//         break;
+//     case 5:
+//         echo "金曜日";
+//         break;
+//     case 6:
+//         echo "土曜日";
+//         break;
+//     case 7:
+//         echo "日曜日";
+//         break;
+//     default:
+//         echo "不正な値です";
+// };
+
+// 20歳以上の男性なら「成人男性」、それ以外は「対象外」
+$age = 20;
+$gender = "男性";
+if ($age >= 20 && $gender === "男性") {
+    echo "成人男性";
+} else {
+    echo "対象外";
 };
+
