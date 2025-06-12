@@ -213,5 +213,5 @@ divタグはブロックレベル要素、spanタグはインライン要素
 
 ---
 
-参考：[youtube](https://youtu.be/LXUlkEBLayU)
-リンク：[MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/CSS)
+参考：[youtube](https://youtu.be/LXUlkEBLayU)  
+参考：[MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/CSS)
