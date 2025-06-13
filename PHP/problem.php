@@ -75,5 +75,8 @@
 
 // 三項演算子　60点以上「合格」、未満は「不合格」
 $score = 75;
+$scores = $score >= 60 ? print "合格" : print "不合格";
+echo $scores;
+
 
 
