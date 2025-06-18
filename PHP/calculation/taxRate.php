@@ -6,4 +6,6 @@
     $tax = $price * $taxRate; // 税額
     $total = $price + $tax; // 税込価格
 
-    echo $total;
+    echo $total ."円";
+
+    // 1320円
