@@ -7,8 +7,8 @@
 ## 目次
 
 - [if文の基本構文](#1)
-- [if~else](#2)
-- [if~elseif~else](#3)
+- [if～else](#2)
+- [if～elseif～else](#3)
 - [比較演算子と論理演算子](#4)
 
 ## MEMO
