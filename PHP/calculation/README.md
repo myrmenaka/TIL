@@ -25,6 +25,8 @@
 `%` : 剰余  
 `**` : 累乗
 
+[calculation-1.php](calculation-1.php)
+
 ---
 <a id="2"></a>
 
@@ -37,6 +39,8 @@
 `$x += y`　→　`$x = $x + y`  
 
 変数に四則演算を行う際、省略した記述方法  
+
+[calculation-2.php](calculation-2.php)
 
 ---
 <a id="3"></a>
@@ -53,6 +57,8 @@
 
 それぞれ、加算（減算）するタイミングが変わる  
 
+[increment-decrement.php](increment-decrement.php)
+
 ---
 <a id="4"></a>
 
@@ -66,8 +72,16 @@
 
 変数の値に連結できる  
 
----
+[stringOperators.php](stringOperators.php)
 
+---
+## 作業チェックリスト
+
+- 四則演算・文字列連結の使い方を理解した
+- `+=` `-=` `.` などの演算子を練習した
+- 練習問題を入力して実行し、動作を確認した
+
+---
 ## 疑問・課題
 
 - 倍数の表現の仕方

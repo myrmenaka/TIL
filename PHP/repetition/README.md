@@ -26,6 +26,8 @@ for (初期化の式; 継続条件の式; 継続のたびに実行される式) 
     処理;
 };
 ```
+[for.php](for.php)
+
 ---
 <a id="2"></a>
 
@@ -40,6 +42,8 @@ while (継続条件の式) {
     処理;
 };
 ```
+[while.php](while.php)
+
 ---
 <a id="3"></a>
 
@@ -52,6 +56,8 @@ do {
     処理;
 } while (条件式);
 ```
+[do-while.php](do-while.php)
+
 ---
 <a id="4"></a>
 
@@ -67,8 +73,16 @@ foreach ($配列の変数名 as $要素名) {
     処理;
 };
 ```
----
+[foreach.php](foreach.php)
 
+---
+## 作業チェックリスト
+
+- `for` `while` `do-while` の基本構文を理解した
+- `foreach` を使って配列の中身を出力した
+- 練習問題を打ち込んで動作確認した
+
+---
 ## 疑問・課題
 
 - whileとdo-whileの違いをもっと詳しく知る  

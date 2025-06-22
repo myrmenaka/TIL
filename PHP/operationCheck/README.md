@@ -2,9 +2,11 @@
 
 ## 内容
 
-- 「Hello World!」の出力
+- 「Hello World!」の出力  
 
-## MEMO
+[HelloWorld.php](HelloWorld.php)
+
+## 作業チェックリスト
 
 - XAMPP環境の構築
 - VSCodeの導入、PHP拡張の追加
