@@ -118,6 +118,11 @@ foreach ($配列の変数名 as $キー名 => $要素名) {
 [associativeArray-foreach.php](associativeArray-foreach.php)
 
 ---
+## セキュリティ面での注意
+
+- ユーザー入力でキーや値を扱う場合、配列の存在チェック（`isset()`）をしないと `Noticeエラー` になる
+
+---
 ## 作業チェックリスト
 
 - インデックス配列の作成・アクセスを理解した
