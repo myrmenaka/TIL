@@ -68,7 +68,7 @@ $_GET['key名'];
 ```php
 $_POST['key名'];
 ```
-[test.html](test.html)
+[form.html](form.html)
 [_POST.php](_POST.php)
 
 ---
