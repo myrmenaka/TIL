@@ -77,20 +77,22 @@ PHPでは、ユーザーから受け取った入力をそのまま `echo` する
 >→ JavaScriptが実行されてしまう（XSS攻撃）
 
 これを防ぐために使うのが  
-`htmlspecialchars()`  
-
-→ 悪意のあるコードを文字列として表示し、実行されないようにする関数  
+`htmlspecialchars()` : 悪意のあるコードを文字列として表示し、実行されないようにする関数  
 
 セキュリティ対策の基本中の基本！
 
 ```php
-$username = htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8');
+$代入する変数 = htmlspecialchars($_POST['対象にするキー'], ENT_QUOTES, 'UTF-8');
 ```
 - `<` → `&lt;`
 - `>` → `&gt;`
 - `"` → `&quot;`  
 
 などに変換され、画面には文字として表示されるだけで、実行さない  
+
+>`ENT_QUOTES` : シングルクオートとダブルクオートを共に変換  
+`UTF-8`      : ASCII 互換のマルチバイト 8 ビット Unicode  
+>[参考: PHPマニュアル](https://www.php.net/manual/ja/function.htmlspecialchars.php)
 
 #### <簡単な流れ>
 
