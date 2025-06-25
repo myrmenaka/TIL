@@ -128,6 +128,6 @@ $代入する変数 = htmlspecialchars($_POST['対象にするキー'], ENT_QUOT
 
 ---
 
-[リファレンス](references.md)
+[リファレンス: references.md](references.md)
 
 参考: []()
