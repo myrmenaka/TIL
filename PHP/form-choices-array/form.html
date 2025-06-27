@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チェックボックス・ラジオボタン</title>
+</head>
+<body>
+    
+    <form action="./receive.php" method="post">
+        <p>性別: </p>
+        <input type="radio" name="gender" value="男性">男性
+        <input type="radio" name="gender" value="女性">女性
+        <input type="radio" name="gender" value="その他">その他
+
+        <p>趣味（複数選択可）: </p>
+        <input type="checkbox" name="hobby[]" value="映画">映画
+        <input type="checkbox" name="hobby[]" value="読書">読書
+        <input type="checkbox" name="hobby[]" value="スポーツ">スポーツ
+        <input type="checkbox" name="hobby[]" value="料理">料理
+        <input type="checkbox" name="hobby[]" value="旅行">旅行
+
+        <br><br>
+        <input type="submit" value="送信">
+    </form>
+
+</body>
+</html>
