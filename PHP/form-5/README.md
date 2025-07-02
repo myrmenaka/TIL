@@ -121,10 +121,20 @@ session_destroy();
     → セッションはサーバーにデータを保存する、クッキーはブラウザ側にデータを保存する  
     ※ブラウザに保存されているデータはユーザー側で内容を書き換えることもできる → 個人情報などが見えるような場合ではセキュリティ面で優れるセッションを扱う  
 
-[参考: セッション（session）をPHPで使うための基本知識を解説！](https://techplay.jp/column/538)  
-[参考: 神田ITschool : セッションの仕組みを理解しよう](https://kanda-it-school-kensyu.com/php-basic-contents/pb_ch11/pb_1103/)  
+    [参考: セッション（session）をPHPで使うための基本知識を解説！](https://techplay.jp/column/538)  
+    [参考: 神田ITschool : セッションの仕組みを理解しよう](https://kanda-it-school-kensyu.com/php-basic-contents/pb_ch11/pb_1103/)  
 
 - バリデーションを忘れる、記述場所迷う  
+- `confirm.php` より、バリデーションとエスケープを同時に記述するか否か  
+    ```php
+    $name = htmlspecialchars($_SESSION['name'] = $_POST['name'], ENT_QUOTES, 'UTF-8');
+    $email = htmlspecialchars($_SESSION['email'] = $_POST['email'], ENT_QUOTES, 'UTF-8');
+    ```
+    ワンライナーで記述でき、処理としては成立しているが…、  
+    可読性や、保守性、デバックのしやすさを考慮すると分けて記述したほうが良い  
+    → 開発現場では、チーム開発や将来的なメンテナンスを考慮して、`「1行で2つ以上のことをしない」` というスタイルが好まれる  
+
+    → `「読みやすさと柔軟性」` を大事にするなら、分けるのがベター  
 
 ---
 
