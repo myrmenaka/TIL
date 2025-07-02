@@ -38,6 +38,7 @@
 ```
 2. PHPで `$_POST['name属性']` を使って選択結果を取得
 
+[参考: mdn web docs : HTML選択要素](https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/select)  
 
 ---
 <a id="3"></a>
