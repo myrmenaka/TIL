@@ -47,7 +47,7 @@ if (empty($name)) {
 
 `filter_var()関数` → `検証フィルター` で指定した形式か判定してくれる  
 メールアドレスだけでなく、様々な形式をフィルタリングしてくれる便利な関数  
-[PHPマニュアル : filter_var](https://www.php.net/manual/ja/function.filter-var.php)  
+[PHPマニュアル : filter_var()](https://www.php.net/manual/ja/function.filter-var.php)  
 [PHPマニュアル : 検証フィルター](https://www.php.net/manual/ja/filter.filters.validate.php)  
 
 `FILTER_VALIDATE_EMAIL` → 値が妥当な e-mail アドレスであるかどうかを検証する  
@@ -73,7 +73,7 @@ if (!filter_var($email, FIKTER_VALIDATE_EMAIL)) {
 ### 数値かどうかを確認
 
 `is_numeric()関数` → 値が数値形式の文字列（整数・小数）の場合に true を返す  
-[PHPマニュアル : is_numeric](https://www.php.net/manual/ja/function.is-numeric.php)
+[PHPマニュアル : is_numeric()](https://www.php.net/manual/ja/function.is-numeric.php)
 
 ```php
 is_numeric(対象の値)

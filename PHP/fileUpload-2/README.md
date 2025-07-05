@@ -119,7 +119,78 @@
 
 ## MEMO
 
-- 
+- `upload.php`  
+    追記箇所解説  
+
+    // 拡張子チェック  
+    1．ファイル名から拡張子を取り出す  
+    ```php
+    $ext = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+    ```
+    - `pathinfo(..., PATHINFO_EXTENSION)`  
+        → ファイル名から拡張子部分だけ（例: png）を抽出
+    - `strtolower()`  
+        → すべて小文字に変えて比較しやすくする  
+        [参考: PHPマニュアル : strtolower()](https://www.php.net/manual/ja/function.strtolower.php)  
+
+    　
+    2．拡張子が「使っていい種類」かチェック  
+    ```php
+    $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
+    if (!in_array($ext, $allowed_ext)) {
+    echo "許可されていない拡張子です。";
+    exit;
+    }
+    ```
+    - `$allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];`  
+        → 使ってもいいリスト  
+    - `in_array($ext, $allowed_ext)`  
+        → 抽出した拡張子が許可されたリストに含まれているかどうか  
+    - もし入っていなければエラーを出して処理を止める
+
+    // MIMEタイプ検証  
+    3．本当に画像かどうか中身もチェック
+    ```php
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $mimeType = finfo_file($finfo, $tmpPath);
+    finfo_close($finfo);
+    ```
+    - `finfo_open(FILEINFO_MIME_TYPE)`  
+        → ファイルのMIMEタイプを調べるためのリソースを作成（中身の検査を準備）  
+        [参考: PHPマニュアル : finfo_open()](https://www.php.net/manual/ja/function.finfo-open.php)  
+    - `finfo_file(..., $tmpPath)`  
+        → 一時ファイルの内容を調べて、実際のファイル形式（例: image/jpeg）を判定  
+    - `finfo_close()`  
+        → リソースを開放（検査が終わったら閉じる）  
+        [参考: PHPマニュアル : finfo_close()](https://www.php.net/manual/ja/function.finfo-close.php)  
+
+        ※拡張子が `.jpg` でも、中身が怪しい場合、ウイルス入りの偽装ファイルなどを防ぐ  
+
+    4．MIMEタイプが画像として問題ないかチェック  
+    ```php
+    $allowed_mime = ['image/jpeg', 'image/png', 'image/gif'];
+    f (!in_array($mimeType, $allowed_mime)) {
+    echo "不正なファイル形式です。";
+    exit;
+    }
+    ```
+    - `in_array($mimeType, $allowed_mime)`  
+        → 実際の中身の形式が許可されたタイプかどうかをチェック  
+
+    // ファイル名をユニーク（かぶらない）にして、保存パスを指定  
+    5．ファイル名を一意にして保存先を決定  
+    ```php
+    $newFileName = uniqid('img_', true) . '.' . $ext;
+    $savePath = $saveDir . $newFileName;
+    ```
+    - `uniqid('img_', true)`  
+        → 一意のIDを生成（例: img_64e2f9ab8b0a90.12345678）  
+        第二引数の `true` でより高精度なIDにする  
+
+        ※同じファイル名の衝突を防ぎながら、安全に保存しつつ表示できる構成  
+
+- 「何のための処理なのか」をはっきりさせることを意識する  
+- 追加するとしたら、ファイルサイズの上限設定、エラーハンドリング
 
 ---
 

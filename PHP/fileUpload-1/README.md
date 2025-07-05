@@ -109,50 +109,64 @@
     → - `.phpファイル` の拡張子に関係なく、表示される内容がHTMLならHTMLの書き方に従うのが基本  
     ※今日までの分、記述忘れてる  
 
-- `upload.php` 解説  
+- `upload.php`  
+    解説  
+
+    // ファイルがアップロードされているか確認  
+
+    1．画像がちゃんと送られてきたか確認
     ```php
     if (isset($_FILES['image']) && $_FILES['image']['error'] === 0)
     ```
     - `$_FILES['image']` は、フォームから送られてきた画像ファイルの情報が入っているところ
     - `isset(...)` は「その情報がちゃんと存在するか」を確認
     - `error === 0` は「エラーがない＝問題なく画像が送られてきた」という意味  
-    → 「画像がちゃんと送られてきたか」チェックしている  
+        → 「画像がちゃんと送られてきたか」チェックしている  
 
+    2．画像が一時的に保存されている場所を取得
     ```php
     $tmpPath = $_FILES['image']['tmp_name'];
     ```
     - 画像は一度サーバーの一時フォルダに保存されるので、その場所（パス）をここでゲット  
 
+    3．元のファイル名を取り出す
     ```php
     $originalName = basename($_FILES['image']['name']);
     ```
     - ユーザーが選んだファイル名（例：cat.jpg）を取得
     - `basename(...)`でファイル名だけを取り出す  
-        [参考: PHPマニュアル : basename](https://www.php.net/manual/ja/function.basename.php)
+        [参考: PHPマニュアル : basename()](https://www.php.net/manual/ja/function.basename.php)
 
+    4．保存したいフォルダを決める
     ```php
     $saveDir = 'uploads/';
     ```
     - 画像を置いておく `保存場所（フォルダ）` を指定
     - `uploads/` は、プロジェクト内の「アップロード専用フォルダ」といったイメージ  
 
+    // 保存先のディレクトリがなければ作成  
+    5．そのフォルダがなければ作る
     ```php
     if (!is_dir($saveDir)) {
     mkdir($saveDir, 0755, true);
     }
     ```
     - `is_dir(...)` → 指定されたパスがディレクトリか確認  
-    [参考: PHPマニュアル : is_dir](https://www.php.net/manual/ja/function.is-dir.php)
+    [参考: PHPマニュアル : is_dir()](https://www.php.net/manual/ja/function.is-dir.php)
     - なければ `mkdir(...)` で新しく作る  
-    [参考: PHPマニュアル : mkdir](https://www.php.net/manual/ja/function.mkdir.php)
+    [参考: PHPマニュアル : mkdir()](https://www.php.net/manual/ja/function.mkdir.php)
         - `0755` は「アクセス許可（安全でよく使われる設定）」、（所有者: 読み書き、他: 読み取り）
         - `true` は「親フォルダも一緒に作ってOK」という意味  
 
+    // 保存パスを指定  
+    6．保存先のパスを作る
     ```php
     $savePath = $saveDir . $originalName;
     ```
     - フォルダ名 + ファイル名 をくっつけて、保存する場所（例：uploads/cat.jpg）を作る  
 
+    // ファイルを保存  
+    7．ファイルをその場所へ移動（＝保存）
     ```php
     if (move_uploaded_file($tmpPath, $savePath))
     ```
@@ -160,12 +174,14 @@
     - 一時的な場所 `$tmpPath` から、本当の保存場所 `$savePath` に移動させる処理
     - これが成功すると、画像がサーバー（upload/）に保存される  
 
+    8．成功したら画面に表示
     ```php
     echo "アップロード成功 <br>";
     echo "<img src='{$savePath}' alt='アップロード画像' style='max-width:300px;'>";
     ```
     - 文字で「アップロード成功！」と表示
-    - `<img>タグ` を使って、画面に画像を表示（サイズ調整も記述されている）
+    - `<img>タグ` を使って、画面に画像を表示（サイズ調整も記述されている）  
+        [参考: mdn web docs : 画像埋め込み要素](https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/img)  
 
 - そもそも `パス` とは…  
 [参考: 「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典 : パス](https://wa3.i-3-i.info/word1166.html)

@@ -78,7 +78,7 @@ if (isset($_POST['hobby'])) {
 }
 ```
 `is_set関数` → 変数が定義されていて、かつ NULLとは異なることを判定する  
-[参考: PHPマニュアル isset](https://www.php.net/manual/ja/function.isset.php)  
+[参考: PHPマニュアル isset()](https://www.php.net/manual/ja/function.isset.php)  
 
 ※存在しない場合の処理のみの場合は、`!` で否定（反転）することで、else を省略可能  
 
