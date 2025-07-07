@@ -99,7 +99,65 @@
 
 ## MEMO
 
-- 
+- `name_form.php` 解説  
+
+    // フォームが送信されたらCookieを保存  
+    1．Cookie で名前を保存する処理（PHP）  
+    ```php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    setcookie('saved_name', $name, time() + 60 * 60 * 24); // 1日（86400秒）
+    }
+    ```
+    - `$_SERVE['REQUEST_METHOD']=== 'POST'`  
+        → フォームが「送信（POST）」されたときだけ、この中の処理を実行  
+    - `$_POST['name']`  
+        → フォームの `name="name"` に入力された内容を取得  
+    - `setcookie('saved_name', $name, time() + 60 * 60 * 24)`
+        → 取得した名前を「saved_name」という名前でCookieに保存  
+        ※`time() + 60 * 60 * 24` は現在時刻＋24時間（1日）を意味する  
+
+    2．入力フォーム部分（HTML）  
+    ```php
+    <form method="post" action="">
+        <p>名前: <input type="text" name="name"
+            value="<?php echo isset($_COOKIE['saved_name']) ? htmlspecialchars($_COOKIE['saved_name'], ENT_QUOTES, 'UTF-8') : ''; ?>">
+        </p>
+        <input type="submit" value="送信">
+    </form>
+    ```
+    - `<form method="post" action="">`  
+        → `method="post"` で送信方法をPOSTに  
+        `action=""` なので自分自身のページに送信される  
+    - `value="<?php echo isset($_COOKIE['saved_name']) ? ... ?>"`  
+        → Cookieの値があれば、その名前をあらかじめ入力欄に表示  
+    - `htmlspecialchars(..., ENT_QUOTES, 'UTF-8')`  
+        → 名前にHTMLタグなどが含まれていても安全に表示できるように変換  
+
+    3．送信後のあいさつメッセージ（PHP）  
+    ```php
+    if (isset($_POST['name'])) {
+        echo "こんにちは、" . htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8') . "さん！";
+    }
+    ```
+    - `isset($_POST['name'])`  
+        → フォームが送信されたかチェック（名前が送られてきたか）  
+    - `echo "こんにちは、..."`  
+        → 入力された名前を使ってメッセージを表示  
+
+    <全体の流れまとめ>
+    - 最初にページを開いたとき、Cookieがあればフォームに名前が表示される
+    - フォーム送信時に、入力された名前がCookieとして1日間保存される
+    - 同時に「こんにちは、○○さん！」と表示される
+
+- PHPのスクリプトでは、Cookieの処理は「出力より前」に行う必要があるというルールがあるため、自然と「フォームのHTMLより前」に書かれることが多い  
+    → PHPでは `setcookie()` を使うと ヘッダー情報（＝ブラウザへの指示）を送るが、これは HTMLを出力する前に行わないとエラーになる  
+
+    → なぜ `setcookie()` は前に書くのか  
+    - CookieはHTTPレスポンスヘッダーの一部として送られる
+    - PHPでは、画面に何かを出力（echoやHTML）した後に `setcookie()` を使おうとすると、 「ヘッダーはすでに送られたので、もうCookieは設定できません」というエラーになる  
+    
+    ※もし「PHPの出力がCookie設定より先にきちゃった！」という場合、`ob_start()（出力バッファリング）` を使えばエラー回避も可能
 
 ---
 
