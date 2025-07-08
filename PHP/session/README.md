@@ -233,7 +233,10 @@
     header('Location: cart.php');
     ```
     - ユーザーを `cart.php` にリダイレクト（画面遷移）する
-    - これがないと「削除されたまま白い画面」で止まっちゃうので、ユーザー体験的にも大事な一行
+    - これがないと「削除されたまま白い画面」で止まっちゃうので、ユーザー体験的にも大事な一行  
+    [参考: PHPマニュアル : header()](https://www.php.net/manual/ja/function.header.php)  
+    [参考: 【PHP入門】header関数とは？使い方をわかりやすく解説](https://www.sejuku.net/blog/28054)  
+
     ```php
     exit;
     ```
