@@ -98,7 +98,9 @@ if (!isset($inputs[$key]) || trim($inputs[$key]) === '') {
 - `!isset(...)`  
     値が存在しない（定義されていない）かどうかをチェック
 - `trim(...) === ''`  
-    空白を除いて空文字かどうかをチェック
+    空白を除いて空文字かどうかをチェック  
+    [参考: PHPマニュアル : trim()](https://www.php.net/manual/ja/function.trim.php)  
+    [参考: 余分な空白・改行を取り除くtrim関数を使おう!〜PHP入門編〜](https://www.sejuku.net/blog/26644)
 - つまり、「値がない or 空欄」の場合に、エラー判定  
 
 ```php
@@ -130,9 +132,7 @@ $errors = validate_required($_POST, $required);
 ---
 ## セキュリティ面での注意
 
-- 入力値は関数内で使用する前に、`trim()` などで前後の空白を除去すると安全性か高まる  
-    [参考: PHPマニュアル : trim()](https://www.php.net/manual/ja/function.trim.php)  
-    [参考: 余分な空白・改行を取り除くtrim関数を使おう!〜PHP入門編〜](https://www.sejuku.net/blog/26644)  
+- 入力値は関数内で使用する前に、`trim()` などで前後の空白を除去すると安全性か高まる    
 - バリデーション後、出力する場合は `htmlspecialchars()` などでエスケープ処理を忘れずに
 - JavaScriptによるクライアント側のバリデーションも併用すると、ユーザー体験も向上
 - サーバー側はあくまで `最終防衛ライン` として位置づけるのが◎
