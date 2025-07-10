@@ -34,7 +34,7 @@ PHPの学習記録をまとめるフォルダです。
 - [Day19 セッションを使った簡易ショッピングカート](./session/)
 - [Day20 Cookieの基本と使い方](./cookie/)
 - [Day21 確認画面付きのフォーム処理（POSTとセッションの活用）](./postSession/)
-- [Day22 ]()
+- [Day22 入力データの一括バリデーション関数](./validationFunction/)
 - [Day23 ]()
 - [Day24 ]()
 - [Day25 ]()
