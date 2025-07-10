@@ -167,7 +167,8 @@ $errors = validate_required($_POST, $required);
     | `trim` | 空白を取り除く |   
     | `返り値` | 関数の「結果」 |   
 
-- `validate.php` 解説 　
+- `validate.php` 解説  
+
     ※関数の定義部分の解説は[実用的な関数の例（必須チェック）](#3)に記述  
 
     // 実際にフォームから送信された値を受け取る  
