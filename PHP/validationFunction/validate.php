@@ -20,8 +20,8 @@ if (!empty($errors)) {
     }
 } else {
     echo "<h3>✔ 入力が正常です！</h3>";
-    echo "<p>名前: " . htmlspecialchars($_POST['name']) . "</p>";
-    echo "<p>メール: " . htmlspecialchars($_POST['email']) . "</p>";
-    echo "<p>年齢: " . htmlspecialchars($_POST['age']) . "</p>";
+    echo "<p>名前: " . htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8') . "</p>";
+    echo "<p>メール: " . htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8') . "</p>";
+    echo "<p>年齢: " . htmlspecialchars($_POST['age'], ENT_QUOTES, 'UTF-8') . "</p>";
 }
 ?>
