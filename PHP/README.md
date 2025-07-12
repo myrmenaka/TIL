@@ -35,7 +35,7 @@ PHPの学習記録をまとめるフォルダです。
 - [Day20 Cookieの基本と使い方](./cookie/)
 - [Day21 確認画面付きのフォーム処理（POSTとセッションの活用）](./postSession/)
 - [Day22 入力データの一括バリデーション関数](./validationFunction/)
-- [Day23 ]()
+- [Day23 お問い合わせフォームの総合演習（メール送信なし）](./inquiryForm/)
 - [Day24 ]()
 - [Day25 ]()
 - [Day26 ]()
