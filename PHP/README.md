@@ -37,7 +37,7 @@ PHPの学習記録をまとめるフォルダです。
 - [Day22 入力データの一括バリデーション関数](./validationFunction/)
 - [Day23 お問い合わせフォームの総合演習（メール送信なし）](./inquiryForm-1/)
 - [Day24 お問い合わせフォームの総合演習（メール送信機能を追加）](./inquiryForm-2/)
-- [Day25 ]()
+- [Day25 MySQLの基礎 1 XAMPPでのDB接続準備](./MySQL-1/)
 - [Day26 ]()
 - [Day27 ]()
 - [Day ]()
