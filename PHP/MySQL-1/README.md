@@ -65,6 +65,9 @@ MySQLの基本的な概念（テーブル・レコードなど）と、XAMPPを�
 
 [connect_test.php](./connect_test.php)  
 
+- `PDO（PHP Data Objects）` は、安全で柔軟なデータベース接続方法  
+- 接続には `new PDO()` を使い、`try/catch` ブロックでエラーハンドリングを行う  
+
 #### <全体の構造>  
 ```php
 $dsn = 'mysql:host=localhost;dbname=portfolio_db;charset=utf8mb4';
@@ -96,8 +99,10 @@ $password = '';
 $pdo = new PDO($dsn, $user, $password);
 ```
 
-- `PDO` は `PHP Data Objects` の略で、PHPからDBを扱うためのクラス
-- `new PDO(...)` で接続を試む
+- `PDO` は `PHP Data Objects` の略で、PHPからDBを扱うためのクラス  
+    [参考: PHPマニュアル : PHP Data Objects](https://www.php.net/manual/ja/book.pdo.php)  
+- `new PDO(...)` で接続を試む  
+    [参考: PHPマニュアル : 接続、および接続の管理 ](https://www.php.net/manual/ja/pdo.connections.php)  
 - 成功すると `$pdo` という変数に接続オブジェクトが入る
 - この `$pdo` を使って SQL を送ったりデータ取得したりできる  
 
@@ -120,6 +125,8 @@ try {
 #### <`PDOException $e`>
 - `PDO` 関係でエラーが起きたときはこの「例外オブジェクト」に情報が入る
 - `$e->getMessage()` で「何が原因で失敗したか」を取得  
+
+[参考: PHPマニュアル : PDOException クラス](https://www.php.net/manual/ja/class.pdoexception.php)  
 
 #### <まとめ>  
 | 処理 | 役割 |   
@@ -148,7 +155,7 @@ XAMPP環境で `portfolio_db` というデータベースを作成し、上記�
 
 1．XAMPPを起動し、MySQLとApacheを開始  
 2．`http://localhost/phpmyadmin` にアクセスし、データベースを作成  
-3．上記PHPコードを `htdocs` に `connect_test.php` として保存  
+3．[上記PHPコード](#5)を `htdocs` に `connect_test.php` として保存  
 4．`http://localhost/connect_test.php` にアクセスして表示を確認  
 
 → 上記のPDO接続コードで「接続成功」と表示されればOK  

@@ -44,11 +44,11 @@
 
 例）
 ```php
-echo n12br($message);
+echo nl2br($message);
 ```
 
->`n12br()` : 改行文字の前に HTML の改行タグを挿入する  
->[参考: PHPマニュアル](https://www.php.net/manual/ja/function.nl2br.php)
+>`nl2br()` : 改行文字の前に HTML の改行タグを挿入する  
+>[参考: PHPマニュアル : nl2br](https://www.php.net/manual/ja/function.nl2br.php)
 
 ---
 <a id="4"></a>
@@ -99,7 +99,7 @@ if (empty($name)) {
 - 複数項目のフォームを作成した
 - PHPでPOSTデータを受け取って表示できた
 - `htmlspecialchars()` を使って安全に表示した
-- `n12br()` を使って改行が反映されるようになった
+- `nl2br()` を使って改行が反映されるようになった
 - 空欄チェック `empty()` を追加した
 
 ---
