@@ -39,7 +39,7 @@ PHPの学習記録をまとめるフォルダです。
 - [Day24 お問い合わせフォームの総合演習（メール送信機能を追加）](./inquiryForm-2/)
 - [Day25 MySQLの基礎 1 XAMPPでのDB接続準備](./MySQL-1/)
 - [Day26 MySQLの基礎 2 PHPからのDB接続と基本的なSELECT文](./MySQL-2/)
-- [Day27 MySQLの基礎 2 データのINSERT（登録）処理](./MySQL-3/)
+- [Day27 MySQLの基礎 3 データのINSERT（登録）処理](./MySQL-3/)
 - [Day28 ]()
 - [Day29 ]()
 - [Day30 ]()

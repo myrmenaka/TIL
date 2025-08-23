@@ -1,4 +1,4 @@
-# 2025.7.24 - MySQLの基礎 2 データのINSERT（登録）処理
+# 2025.7.24 - MySQLの基礎 3 データのINSERT（登録）処理
 
 ## 目的
 
@@ -55,7 +55,34 @@ VALUES (値1, 値2, ...);
 
 [insert_form.php](./insert_form.php)  
 
+#### 全体の目的
+- ユーザーが「タイトル」と「内容」を入力して、ボタンを押すと `insert_process.php` に送信されるという仕組み  
+- データベースに新しい情報を登録する準備画面
 
+#### 1.フォームの部分
+```html
+<form action="./insert_process.php" method="post">
+```
+
+- `action="./insert_process.php"` → 入力されたデータを送る先のPHPファイル
+- `method="post"` → データを「POST方式」で送信（URLに表示されない、安全な方法）
+
+#### 2.入力欄の定義
+```html
+<label>タイトル: <input type="text" name="title"></label><br>
+<label>内容: <textarea name="description"></textarea></label><br>
+```
+
+- `input type="text"` → 1行のテキスト入力欄（タイトル用）
+- `textarea` → 複数行の入力欄（内容用）
+- `name="..."` → PHP側でデータを受け取るときのキー（$_POST['title'] など）
+
+#### 3.送信ボタン
+```html
+<button type="submit">登録</button>
+```
+
+- このボタンを押すと、フォームの内容が `insert_process.php` に送られる
 
 ---
 <a id="4"></a>
@@ -64,7 +91,75 @@ VALUES (値1, 値2, ...);
 
 [insert_process.php](./insert_process.php)  
 
+#### 全体の流れ
+- ユーザーが入力した「タイトル」と「内容」を受け取る
+- 入力が空でないか確認する
+- データベースに接続する
+- `learning_logs` テーブルにデータを登録する
+- 成功したら「登録完了」、失敗したらエラーメッセージを表示する
 
+#### 1.入力データの受け取り
+```php
+$title = $_POST['title'] ?? '';
+$description = $_POST['description'] ?? '';
+```
+
+- `$_POST['title']` → HTMLフォームから送られてきた「タイトル」
+- `?? ''` → 万が一送られてこなかった場合は空文字にする（エラー防止）
+
+#### 2.入力チェック
+```php
+if ($title === '' || $description === '') {
+    exit('入力値が不足しています');
+}
+```
+
+- タイトルか内容が空なら処理を止めて、メッセージを表示
+- `exit()` はその場でスクリプトを終了する命令
+
+#### 3.データベース接続
+```php
+$pdo = new PDO('mysql:host=localhost;dbname=portfolio_db;charset=utf8mb4', 'root', '');
+```
+
+- `PDO` は PHPでデータベースとやり取りするための機能
+- `mysql:host=localhost` → 自分のパソコン内のMySQLに接続
+- `dbname=portfolio_db` → 使用するデータベース名
+- `'root', ''` → ユーザー名とパスワード（今回はパスワードなし）
+
+#### 4.SQL文の準備と実行
+```php
+$sql = "INSERT INTO learning_logs (title, description, created_at) VALUES (:title, :description, NOW())";
+$stmt = $pdo->prepare($sql);
+```
+
+- `INSERT INTO` → `learning_logs` テーブルに新しいデータを追加
+- `:title, :description` → プレースホルダー（後で値を入れる場所）
+- `NOW()` → 現在の日時を自動で登録
+
+#### 5.データのバインドと登録
+```php
+$stmt->bindParam(':title', $title);
+$stmt->bindParam(':description', $description);
+$stmt->execute();
+```
+
+- `bindParam()` → プレースホルダーに実際の値を入れる
+- `execute()` → SQLを実行して、データベースに登録！
+
+#### 6.成功・失敗の処理
+```php
+echo "登録が完了しました";
+```
+
+- 成功したらこのメッセージを表示  
+```php
+} catch (PDOException $e) {
+    echo 'DBエラー: ' . htmlspecialchars($e->getMessage());
+}
+```
+
+- もし何か問題が起きたら、エラー内容を表示（安全のために `htmlspecialchars()` で文字を無害化）
 
 ---
 ---
