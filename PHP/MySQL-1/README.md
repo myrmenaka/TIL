@@ -124,6 +124,9 @@ CREATE TABLE users (
 
 [connect_test.php](./connect_test.php)  
 
+※ 上記の雛形は、随時「接続成功」と表示されるコード  
+ → 本番環境では表示しないほうが好ましいが、テスト環境では表示することで接続を目視できる意図がある
+
 - `PDO（PHP Data Objects）` は、安全で柔軟なデータベース接続方法  
 - 接続には `new PDO()` を使い、`try/catch` ブロックでエラーハンドリングを行う  
 
