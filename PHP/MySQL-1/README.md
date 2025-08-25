@@ -8,7 +8,7 @@ MySQLの基本的な概念（テーブル・レコードなど）と、XAMPPを�
 
 - [MySQL とは](#1)
 - [データベースの基本用語](#2)
-- [XAMPPでMySQLの環境を整える](#3)
+- [XAMPPでMySQL(DB)操作 CUI/GUI](#3)
 - [接続に必要な情報（phpMyAdmin での初期状態）](#4)
 - [接続用PHPコードの雛形（PDO）](#5)
 
@@ -41,11 +41,70 @@ MySQLの基本的な概念（テーブル・レコードなど）と、XAMPPを�
 ---
 <a id="3"></a>
 
-### XAMPPでMySQLの環境を整える
+### XAMPPでMySQL(DB)操作 CUI/GUI
 
-1．XAMPPを起動し、`Apache` と `MySQL` をStart  
-2．ブラウザで `http://localhost/phpmyadmin` にアクセス  
-3．左メニュー「新規作成」→ データベース名: `portfolio_db` → 「作成」をクリック  
+データベースとテーブルの準備  
+
+#### GUI(phpMyAdminで操作)  
+
+1．phpMyAdminにアクセス
+1. XAMPPを起動（`Apache` と `MySQL` を「Start」）
+2. ブラウザで http://localhost/phpmyadmin にアクセス
+
+2．データベースを作成
+1. 左側メニューの「新規作成」をクリック
+2. データベース名に `portfolio_db` と入力  
+(データベース名、適宜変更)
+3. 照合順序（Collation）は `utf8mb4_general_ci` を選択
+4. 「作成」ボタンをクリック
+
+→ これで `空のデータベース` ができる  
+
+3．テーブルを作成（ユーザー情報）
+1. 作成した portfolio_db（データベース）をクリック
+2. 「テーブルを作成」欄に `users` と入力  
+（テーブル名、適宜変更）
+3. 必要なカラム数に設定（） → 「実行」  
+カラム設定（1行ずつ入力）  
+
+    例）  
+    | 名前 | 型 | 長さ/値 | その他設定 |  
+    |:--:|:--:|:--:|:--:|  
+    | id | INT |  | A_I（自動増加）＋主キー |  
+    | username | VARCHAR | 255 | NOT NULL＋UNIQUE |  
+    | password | VARCHAR | 255 | NOT NULL |  
+    | created_at | DATETIME |  | デフォルト値 → CURRENT_TIMESTAMP |  
+
+
+4. 入力が終わったら「保存」ボタンをクリック  
+
+→ これで `users テーブル` が完成  
+
+4．データの確認・追加
+- 左メニューで users テーブルを選択
+- 上部タブの「挿入」から手動でデータ追加も可能（テスト用に便利）
+- 「表示」タブで登録されたデータを一覧表示できる
+
+
+
+#### CUI(ターミナル操作)  
+
+※ データベース名:portfolio_db、テーブル名:users、カラム数:4  
+
+データベース作成
+```sql
+CREATE DATABASE portfolio_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
+
+ユーザーテーブル作成
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
 
 [参考: MySQLをXAMPPを使ってWindows環境にインストールする方法](https://blog.proglus.jp/1595/)  
 
@@ -109,10 +168,10 @@ $pdo = new PDO($dsn, $user, $password);
 #### <例外（エラー）への対応：try / catch>
 ```php
 try {
-    $pdo = new PDO(...);
+    $pdo = new PDO($dsn, $user, $password);
     echo "接続成功";
 } catch (PDOException $e) {
-    echo "接続失敗: " . $e->getMessage();
+    echo "接続失敗: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
 }
 ```
 

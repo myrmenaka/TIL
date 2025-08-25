@@ -41,7 +41,7 @@ PHPの学習記録をまとめるフォルダです。
 - [Day26 MySQLの基礎 2 PHPからのDB接続と基本的なSELECT文](./MySQL-2/)
 - [Day27 MySQLの基礎 3 データのINSERT（登録）処理](./MySQL-3/)
 - [Day28 MySQLの基礎 4 データのUPDATE（更新）・DELETE（削除）処理](./MySQL-4/)
-- [Day29 ]()
+- [Day29 ログイン機能の実装 1 会員登録とログイン処理](./Login-1/)
 - [Day30 ]()
 
 ## 記録の目的
