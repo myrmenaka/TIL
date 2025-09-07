@@ -23,8 +23,8 @@ Javaの学習記録をまとめるフォルダです。
 - [8. 例外処理とエラー対策](./ExceptionHandling/)
 - [9. 標準ライブラリの活用](./Library/)
 - [10. 実践的なコード構成と設計の考え方](./CodeStructure/)
-
-- [職業訓練での学習まとめ](./2025-training/)
+  
+- [職業訓練での学習まとめ]()
 - [JavaBronze対策]()
 - [JavaSilver対策]()
 
