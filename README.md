@@ -6,13 +6,13 @@
 
 - OS: Windows HOME 11
 - IDE: VSCode 1.100.2
-- PHP 8.4.7
-- XAMPP 8.2.12
+- PHP: 8.4.7
+- XAMPP: 8.2.12
 
 ## カテゴリー
 
 - [PHP](./PHP)
-- []()
+- [Java](./Java)
 - []()
 - []()
 
