@@ -1,0 +1,10 @@
+// 二つの整数値57と32の和を求めて表示（式として表示）
+
+public class Sam2 {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+}

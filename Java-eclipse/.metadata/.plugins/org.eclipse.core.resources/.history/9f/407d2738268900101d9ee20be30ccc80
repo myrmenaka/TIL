@@ -1,0 +1,9 @@
+//　二つの整数値５７と３２の和を求めて表示
+public class Sum1 {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+}

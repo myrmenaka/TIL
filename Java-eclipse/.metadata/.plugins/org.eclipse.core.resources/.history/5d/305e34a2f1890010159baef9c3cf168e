@@ -1,0 +1,17 @@
+//　読み込んだ整数値は正の値か
+
+import java.util.Scanner;
+
+public class Positive1 {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("整数値：");
+		int n = stdIn.nextInt();
+		
+		if (n > 0)
+			System.out.println("その値は正です。");
+	}
+}

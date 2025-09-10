@@ -1,0 +1,30 @@
+//　三つの整数値の最大値を求める
+
+import java.util.Scanner;
+
+public class Max3 {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("整数値a:");
+		int a = stdIn.nextInt();
+		System.out.println("整数値b:");
+		int b = stdIn.nextInt();
+		System.out.println("整数値c:");
+		int c = stdIn.nextInt();
+		
+		int max = a;
+		if (b > max) {
+			max = b;
+		}
+		if (c > max) {
+			max = c;
+		}
+		
+		System.out.println("最大値は" + max + "です。");
+
+	}
+
+}

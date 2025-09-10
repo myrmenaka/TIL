@@ -1,0 +1,40 @@
+// 読み込んだ値に応じてじゃんけんの手を表示（0,1,2のみを読み込む）
+
+import java.util.Scanner;
+
+public class FingerFlashing {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int hand;
+		
+//		do {
+//			System.out.print("手を選べ（0…グー/1…チョキ/2…パー）");
+//			hand = stdIn.nextInt();
+//		}while(hand < 0 || hand > 2);
+//		
+//		switch (hand) {
+//		case 0 : System.out.println("グー");
+//				break;
+//		case 1 : System.out.println("チョキ");
+//				break;
+//		case 2 : System.out.println("パー");
+//				break;
+		
+		do {
+			System.out.print("手を選べ（0…グー/1…チョキ/2…パー）");
+			hand = stdIn.nextInt();
+		}while(!(hand < 0 || hand > 2));
+		
+		switch (hand) {
+		case 0 : System.out.println("グー");
+				break;
+		case 1 : System.out.println("チョキ");
+				break;
+		case 2 : System.out.println("パー");
+				break;
+		}
+	}
+
+}

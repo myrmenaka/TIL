@@ -1,0 +1,27 @@
+// 配列変数の値を表示
+
+import java.util.Scanner;
+
+public class PrintArray {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.print("要素数：");
+		int n = stdIn.nextInt(); // 要素数を読み込む
+		int[] a = new int[n];
+		System.out.println("a = " + a);
+		
+		// 参照先が存在するので、例外が発生しない
+		a[0] = 10;  
+		// 参照先なしの値
+		a = null;
+		// 参照先がNULLなので、例外発生
+		a[0] = 20;
+		
+		System.out.println("a = " + a); 
+
+	}
+
+}

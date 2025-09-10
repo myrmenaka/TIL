@@ -1,0 +1,35 @@
+//　二つの実数値を読み込んで加減乗除した値を表示
+
+import java.util.Scanner;
+
+public class ArithDouble {
+
+//	（stdInの警告対処３）　警告を出さないようにメソッドに指定する
+//	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		
+//		（stdInの警告対処２）　警告を出さないように変数に指定する
+//		@SuppressWarnings("resource")
+		
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("xとyを加減乗除します。");
+		
+		System.out.println("xの値："); // xの値の入力を促す
+		double x = stdIn.nextDouble(); //　xに浮動小数点数を読み込む
+		
+		System.out.println("yの値："); // yの値の入力を促す
+		double y = stdIn.nextDouble(); //　yに浮動小数点数を読み込む
+		
+		System.out.println("x + y = " + (x + y)); // x + yの値を表示
+		System.out.println("x - y = " + (x - y)); // x - yの値を表示
+		System.out.println("x * y = " + (x * y)); // x * yの値を表示
+		System.out.println("x / y = " + (x / y)); // x / yの値を表示(商)
+		System.out.println("x % y = " + (x % y)); // x % yの値を表示(剰余)
+		
+//		（stdInの警告対処２）　リソースを閉じるプログラムを記載する
+//		stdIn.close();
+
+	}
+
+}

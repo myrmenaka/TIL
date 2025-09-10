@@ -1,0 +1,12 @@
+// 二つの整数値の小さいほうの値と大きいほうの値を求めて表示
+
+import java.util.Scanner;
+
+public class MinMax {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+}

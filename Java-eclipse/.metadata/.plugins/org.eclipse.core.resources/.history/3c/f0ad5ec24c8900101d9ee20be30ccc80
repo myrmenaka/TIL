@@ -1,0 +1,9 @@
+//　名前を読み込んで挨拶する
+public class HelloNext {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+}
