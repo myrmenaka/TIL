@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class MaxHwMethod {
-	
+	 
 	// a,b,cの最大値を返却
 	static int max(int a, int b, int c) {
 		int max = a;
