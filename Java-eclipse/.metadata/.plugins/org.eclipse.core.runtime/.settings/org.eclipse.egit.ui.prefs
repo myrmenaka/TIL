@@ -1,3 +1,4 @@
-StagingView_Presentation=COMPACT_TREE
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>commit</message>\r\n</messages>
+RepositorySearchDialogDeepSearch=true
+RepositorySearchDialogSearchPath=E\:\\TIL\\Java-eclipse
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Merge branch &apos;main&apos; of https\://github.com/myrmenaka/TIL.git into main</message>\r\n<message>commit</message>\r\n</messages>
 eclipse.preferences.version=1
