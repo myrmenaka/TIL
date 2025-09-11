@@ -1,3 +1,6 @@
+// パッケージ管理版
+
+
 // 実行用クラス
 
 public class AccountTester3 {
