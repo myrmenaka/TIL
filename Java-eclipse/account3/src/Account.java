@@ -13,6 +13,11 @@ class Account {
 		balance = z;
 	}
 	
+	// デフォルトコンストラクタの作成
+	Account() {
+		
+	}
+	
 	// 口座名義を調べる
 	String getName() {
 		return name;
