@@ -1,7 +1,7 @@
+// 設計図クラス
 // 銀行口座クラス【第2版】とテスト用クラス
 
 // 銀行口座クラス【第2版】
-// 設計図クラス
 class Account {
 	private String name;
 	private String no;
