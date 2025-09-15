@@ -1,28 +1,7 @@
-INDEX VERSION 1.134+D:\TIL\Java-eclipse\.metadata\.plugins\org.eclipse.jdt.core
-252276434.index
-3271193799.index
-395327331.index
-1865797976.index
-2279257025.index
-3380705583.index
-1191347399.index
-152263432.index
-321791110.index
-2874779289.index
-482292549.index
-3083974683.index
-1163380661.index
-2007115701.index
-2663481984.index
-4274562208.index
-969968605.index
-4004214287.index
-3016894797.index
+INDEX VERSION 1.134+E:\TIL\Java-eclipse\.metadata\.plugins\org.eclipse.jdt.core
 2115267486.index
-3697186319.index
-3740164988.index
-3922113046.index
-1304923614.index
-130601786.index
-2578204313.index
-10819363.index
+4004214287.index
+152263432.index
+3271193799.index
+1865797976.index
+969968605.index
