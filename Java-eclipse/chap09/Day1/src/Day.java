@@ -12,7 +12,7 @@ public class Day {
 		// staticをつければDay.yearとして使えるけど、staticを付ける意味がそもそもない
 		// Dayクラスは「１つ１つのオブジェクトが異なる日付を持つ」
 		// year,month,dateはインスタンスごとに違う値を持つべき　→　staticでは設計が崩れる
-		// thisキーワードは「このインスタンス自身」を指す
+		// thisキーワードは「このインスタンス自身(= Dayクラス)」を指す
 		// thisを使うことで「誰のyear」かを明確にする
 		this.year = year;
 		this.month = month;
