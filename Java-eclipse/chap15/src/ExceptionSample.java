@@ -1,6 +1,13 @@
 // 二つの整数値を読み込んで加減乗除した結果を表示するプログラム
 // 入力ミスやゼロ除算などの例外にも対応
 
+/*
+ * try-catch-finally構文で例外処理を実装し、ユーザー入力の不正やゼロ除算に対応。
+ * InputMismatchExceptionは非整数入力（例：文字列）に対する例外。
+ * ArithmeticExceptionはゼロ除算などの算術エラーに対応。
+ * finallyブロックは、例外の有無に関係なく毎回実行されるため、再試行の確認に最適。
+ */
+
 import java.util.*;
 
 public class ExceptionSample {
