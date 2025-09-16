@@ -10,6 +10,11 @@ public class RobotPet extends Pet {
 	
 	// 自己紹介
 	// スーパークラスのintroduceメソッドのオーバーライド
+	
+	// @Override は「このメソッドは親のメソッドを上書きしてますよ」という宣言
+	// 親クラスに同名メソッドがないとき、コンパイルエラーとなる
+	// サブクラス側に書く
+	@Override // アナテイション　
 	public void introduce() {
 		System.out.println("◇私はロボット。名前は" + getName() + "。");
 		System.out.println("◇ご主人様は" + getMasterName() + "。");

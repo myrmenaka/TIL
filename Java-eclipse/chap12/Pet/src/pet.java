@@ -22,7 +22,7 @@ public class Pet {
 		return masterName;
 	}
 	
-	// 自己紹介
+	// 自己紹介 
 	public void introduce() {
 		System.out.println("■僕の名前は" + name + "です。");
 		System.out.println("■ご主人様は" + masterName + "です。");
