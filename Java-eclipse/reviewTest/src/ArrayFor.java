@@ -8,7 +8,12 @@ public class ArrayFor {
 				"小鳥がチュンチュン鳴きます"
 		};
 		
-		for (int i = 1; i < fortune.length; i++) {
+		// ArrayIndexOutOfBoundsException 例外エラー発生
+//		for (int i = 1; i <= fortune.length; i++) {
+//			System.out.println(fortune[i]);
+//		}
+		
+		for (int i = 0; i < fortune.length; i++) {
 			System.out.println(fortune[i]);
 		}
 
