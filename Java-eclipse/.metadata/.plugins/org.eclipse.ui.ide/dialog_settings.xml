@@ -45,10 +45,10 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="true"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="Y:\40_java\java202503"/>
 			<item value="E:\TIL\Java-eclipse"/>
 			<item value="E:\TIL"/>
 			<item value="E:\TIL\Java-eclipse\sample"/>
-			<item value="Y:\40_java\java202503"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
@@ -62,6 +62,6 @@
 		</section>
 	</section>
 	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
-		<item key="OUTSIDE_LOCATION" value="E:\TIL\Java-eclipse\chap08"/>
+		<item key="OUTSIDE_LOCATION" value="E:\TIL\Java-eclipse\sample"/>
 	</section>
 </section>
