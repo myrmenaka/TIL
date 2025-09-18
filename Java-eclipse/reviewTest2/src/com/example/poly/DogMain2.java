@@ -7,15 +7,26 @@ public class DogMain2 {
 		Dog2 pochi = new Dog2("ポチ", 8);
 		Dog2 reo = new Dog2("レオ", 2);
 		
+		// セッターメソッドがある場合（コンストラクタが無いと仮定）
+//		Dog2 pochi = new Dog2();
+//		Dog2 reo = new Dog2();
+//		
+//		pochi.setName("ポチ");
+//		pochi.setAge(8);
+//		
+//		reo.setName("レオ");
+//		reo.setAge(2);
+		
+		
 		// 犬の情報を表示
 		System.out.println("---1匹目---");
 		System.out.println("名前は" + pochi.getName());
-		System.out.println("年齢は" + pochi.getAge());
+		System.out.println("年齢は" + pochi.getAge() + "歳");
 		System.out.println();
 		
 		System.out.println("---2匹目---");
 		System.out.println("名前は" + reo.getName());
-		System.out.println("年齢は" + reo.getAge());
+		System.out.println("年齢は" + reo.getAge() + "歳");
 		System.out.println();
 		
 		// bark()メソッドの呼出
