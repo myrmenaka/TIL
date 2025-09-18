@@ -1,14 +1,12 @@
 package com.example.poly;
 
-public class DogMain {
+public class DogMain1 {
 
 	public static void main(String[] args) {
-//		Dog pochi = new Dog("ポチ", 8);
-//		Dog reo = new Dog("レオ", 2);
 		
 		// 犬オブジェクトを2つ生成
-		Dog pochi = new Dog();
-		Dog reo = new Dog();
+		Dog1 pochi = new Dog1();
+		Dog1 reo = new Dog1();
 		
 		// 犬オブジェクトに代入
 		pochi.name = "ポチ";

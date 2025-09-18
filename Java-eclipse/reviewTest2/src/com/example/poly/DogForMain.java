@@ -3,8 +3,8 @@ package com.example.poly;
 public class DogForMain {
 
 	public static void main(String[] args) {
-		Dog pochi = new Dog();
-		Dog reo = new Dog();
+		Dog1 pochi = new Dog1();
+		Dog1 reo = new Dog1();
 		
 		String[] name = {"ポチ", "レオ"};
 		int[] age = {8, 2};
