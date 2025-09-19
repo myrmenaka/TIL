@@ -23,12 +23,6 @@ public class AnimalMain3 {
 		cat.name = "タマ";
 		cat.catType = "マンチカン";
 		
-		// 犬オブジェクトのメソッドすべて呼び出す
-		dog.sleep();
-		dog.eat("ドックフード");
-		dog.bark();
-		System.out.println();
-		
 		// 表示
 		showDetail(dog);
 		showAction(dog, "ドックフード");
