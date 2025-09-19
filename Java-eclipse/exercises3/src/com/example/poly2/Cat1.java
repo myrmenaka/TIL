@@ -1,7 +1,7 @@
 package com.example.poly2;
 
 // Animalクラスの継承
-public class Cat extends Animal {
+public class Cat1 extends Animal1 {
 	// nameフィールド
 	String name;
 	// catTypeフィールド

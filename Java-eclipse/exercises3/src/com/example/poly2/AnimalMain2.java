@@ -1,10 +1,12 @@
+// 動物、犬、猫クラスの利用
+
 package com.example.poly2;
 
 public class AnimalMain2 {
 
 	public static void main(String[] args) {
 		// 犬オブジェクトを生成
-		Dog dog = new Dog();
+		Dog1 dog = new Dog1();
 		
 		// 犬オブジェクトに値の代入
 		dog.animalType = "犬";
@@ -26,7 +28,7 @@ public class AnimalMain2 {
 		System.out.println();
 		
 		// 猫オブジェクトの生成
-		Cat cat = new Cat();
+		Cat1 cat = new Cat1();
 		
 		// 猫オブジェクトに値の代入
 		cat.animalType = "猫";

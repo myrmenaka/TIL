@@ -1,6 +1,6 @@
 package com.example.poly2;
 
-public class Animal {
+public class Animal1 {
 	// animalTypeフィールド
 	String animalType;
 	// ageフィールド
@@ -15,6 +15,5 @@ public class Animal {
 	public void eat(String food) {
 		System.out.println(food + "を食べています");
 	}
-	
 	
 }
