@@ -9,7 +9,7 @@ public class VideoPlayer implements IPlayer {
 	
 	// コンストラクタ
 	public VideoPlayer() {
-		id = ++count;
+		id = ++count; // 前置インクリメント→インスタンスが生成されるごとに１プラスされる
 	}
 	
 	// IPlayerインターフェースの抽象メソッドのオーバーライド（必須）
@@ -23,7 +23,7 @@ public class VideoPlayer implements IPlayer {
 		System.out.println("++ビデオ再生停止！");
 	}
 	
-	// 製造番号表示
+	// 製造番号表示 (独自メソッド)
 	public void printInfo() {
 		System.out.println("++本機の製造番号は[" + id + "]です");
 	}

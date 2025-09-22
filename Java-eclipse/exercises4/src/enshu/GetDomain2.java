@@ -1,0 +1,54 @@
+package enshu;
+
+import java.util.Scanner;
+
+public class GetDomain2 {
+
+	public static void main(String[] args) {
+		System.out.print("メールアドレスを入力：");
+		String mailAddress = inputMailAddress();  // キーボードから文字列入力
+		
+		if (isMailFomat(mailAddress)) {
+			String user = getUser(mailAddress); // ユーザー名取得
+			
+			String domain = getDomain(mailAddress); // ドメイン名取得
+			
+			System.out.println("ユーザー名：" + user);
+			System.out.println("ドメイン名：" + domain);
+		} else {
+			System.out.println("正しいフォーマットで入力してください");
+		}
+	}
+	
+	// キーボードから入力するメソッド
+	@SuppressWarnings("resource")
+	private static String inputMailAddress() {
+		Scanner sc = new Scanner(System.in);
+		return sc.nextLine();
+	}
+	
+	// メールアドレスのフォーマットチェック
+	private static boolean isMailFomat(String mailAdress) {
+		int start = mailAddress.indexOf("@"); // 0~@
+		int end = mailAddress.lastIndexOf("@"); // @~文末
+		
+		if (start == end) { // @が1個
+			return true;
+		} else { // @が2個以上、または0個
+			return false;
+		}
+	}
+	
+	
+	// ユーザー名を抜き出すメソッド
+	private static String getUser(String mailAddress) {
+		int pos = mailAddress.indexOf("@");
+		return mailAddress.substring(0, pos);
+	}
+		
+	// ドメイン名を抜き出すメソッド
+	private static String getDomain(String mailAddress) {
+		int pos = mailAddress.indexOf("@");
+		return mailAddress.substring(pos + 1);
+	}
+}
