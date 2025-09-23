@@ -27,6 +27,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="false"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\TIL\Java-eclipse\exercises4"/>
+			<item value="C:\TIL\Java-eclipse"/>
 			<item value="C:\TIL"/>
 			<item value="D:\TIL\Java-eclipse"/>
 			<item value="E:\TIL\Java-eclipse"/>
