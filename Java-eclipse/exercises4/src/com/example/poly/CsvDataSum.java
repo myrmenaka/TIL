@@ -3,7 +3,7 @@ package com.example.poly;
 public class CsvDataSum {
 
 	public static void main(String[] args) {
-		String inputCsv = "65, 59, 72, 85, 66";
+		String inputCsv = "65,59,72,85,66";
 		String[] csvNumStrs = inputCsv.split(","); 
 		
 		int sum = calcArraySum(csvNumStrs);

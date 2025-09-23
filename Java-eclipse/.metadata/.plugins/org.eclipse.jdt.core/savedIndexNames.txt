@@ -1,21 +1,2 @@
-INDEX VERSION 1.134+E:\TIL\Java-eclipse\.metadata\.plugins\org.eclipse.jdt.core
-276568697.index
-152263432.index
-2383974362.index
-3271193799.index
-2007115701.index
-2210491249.index
-2578204313.index
-431892066.index
-1736125167.index
-969968605.index
-2115267486.index
+INDEX VERSION 1.134+C:\TIL\Java-eclipse\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-2663481984.index
-3922113046.index
-4004214287.index
-4268915541.index
-130601786.index
-1857623796.index
-10819363.index
-2279257025.index

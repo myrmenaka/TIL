@@ -28,7 +28,7 @@ public class GetDomain2 {
 	}
 	
 	// メールアドレスのフォーマットチェック
-	private static boolean isMailFomat(String mailAdress) {
+	private static boolean isMailFomat(String mailAddress) {
 		int start = mailAddress.indexOf("@"); // 0~@
 		int end = mailAddress.lastIndexOf("@"); // @~文末
 		
