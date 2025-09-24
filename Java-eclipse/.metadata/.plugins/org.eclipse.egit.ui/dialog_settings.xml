@@ -8,6 +8,14 @@
 		<item value="akane &lt;akamaru.0326@outlook.com&gt;"/>
 		<item value="AB25 &lt;AB25@PC127.fa.shiga-center.ac.jp&gt;"/>
 	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/myrmenaka/TIL.git"/>
+	</list>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
 		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
 		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
