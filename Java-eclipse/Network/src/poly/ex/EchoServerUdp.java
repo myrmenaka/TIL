@@ -1,14 +1,12 @@
 // エコーサーバ（UDP）
 // try-catch無しバージョン
-
+package poly.ex;
 /*
  * ・UDPは接続レス型通信 → ソケットとパケットでやり取り
  * ・receive() → 通信の入口、send() → 通信の出口
  * ・DatagramPacket は送受信の入れ物
  * ・"quit" で終了する制御設計
  */
-package poly.ex;
-
 import java.io.*;
 import java.net.*;
 public class EchoServerUdp {

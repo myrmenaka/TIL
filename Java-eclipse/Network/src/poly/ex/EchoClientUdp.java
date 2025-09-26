@@ -1,5 +1,5 @@
 // エコークライアント(UDP)
-
+package poly.ex;
 /*
  * SocketExceptionの親クラスにIOExceptionがあるので
  * 本来、別々にcatchを記述するのが適切ではあるが
@@ -11,8 +11,6 @@
  * ・IOException で通信全体の例外をまとめて処理
  * ・ユーザー入力 → バイト配列 → パケット → 送信 → 受信 → 表示 の流れ
  */
-package poly.ex;
-
 import java.io.*;
 import java.net.*;
 import java.util.*;

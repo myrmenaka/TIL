@@ -1,6 +1,6 @@
 // エコーサーバ（UDP）
 // try-catch有りバージョン
-
+package poly.ex;
 /*
  * ・UDPは接続レス型通信 → ソケットとパケットでやり取り
  * ・receive() → 通信の入口、send() → 通信の出口
@@ -8,8 +8,6 @@
  * ・"quit" で終了する制御設計
  * ・try-catchで通信(IOException)とソケット(SocketException)の責任を分離している
  */
-package poly.ex;
-
 import java.io.*;
 import java.net.*;
 
