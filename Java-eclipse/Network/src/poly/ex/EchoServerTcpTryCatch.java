@@ -21,7 +21,7 @@ public class EchoServerTcpTryCatch {
          ServerSocket svSocket = new ServerSocket(SERVER_PORT);
 
          while (true) {
-             System.out.println("接続準備中・・・");
+             System.out.println("接続受付中・・・");
 
              // クライアントからの接続要求を受け付け、通信ソケットを取得
              Socket cSocket = svSocket.accept();

@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class omikujiClient {
+public class omikujiClientUdp {
     // サーバのIPアドレス（自PCまたは指定されたIP）
 //    private static final String SERVER_IP = "172.16.110.60";
     private static final String SERVER_IP = "localhost";

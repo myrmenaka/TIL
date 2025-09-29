@@ -1,16 +1,9 @@
-// エコーサーバ（TCP）
-// try-catch無しバージョン
-package poly.ex;
-/*
- * ・ServerSocket は TCP通信の受け口として機能し、accept() で接続を受け付ける
- * ・Socket はクライアントとの通信路を表し、入出力ストリームを通じてデータをやり取りする
- * ・DataInputStream / DataOutputStream は UTF文字列などの高レベルデータを扱える
- * ・flush() はバッファの内容を即座に送信する責任を持つ
- * ・"quit" を受け取ったらサーバを終了する設計は、制御構造の明確な責任分離になっている
- */
+package enshu;
+
 import java.io.*;
 import java.net.*;
-public class EchoServerTcp {
+import java.util.Random;
+public class omikujiServerTcp {
 	// サーバのポート番号
 	private static final int SERVER_PORT = 30000;
 
@@ -36,14 +29,23 @@ public class EchoServerTcp {
 			// データ出力ストリームの作成
 			DataOutputStream dos = new DataOutputStream(bos);
 			
-			// クライアントから送られてきた文字列を受信
-			// 受信待ち → 受信データを str に格納
-			String str = dis.readUTF();
-			System.out.println("受信文字列：" + str);
+			// クライアントから送られてきた名前を受信
+			// 受信待ち → 受信データを name に格納
+			String name = dis.readUTF();
+			System.out.println("受信者：" + name);
 			
-			// 受信した文字列をそのままクライアントに送り返す（エコー）
-			// 受信文字列をそのまま送信
-			dos.writeUTF(str);
+			// おみくじ結果をランダムに生成（名前は使わず結果のみ返す設計）
+            String result = getOmikuji();
+            System.out.println("おみくじの結果：" + result);
+            System.out.println("------------------------");
+            
+            // メソッドチェーン
+            // TCPではバイト型への変換は不要
+            StringBuilder sb = new StringBuilder();
+            sb.append(name).append("さんの運勢は「").append(result).append("」です");
+            
+			// 受信文字列と文字列を連結して送信
+			dos.writeUTF(sb.toString());
 			// 出力ストリームのフラッシュ
 			// バッファの内容を即時送信
 			dos.flush();
@@ -57,7 +59,7 @@ public class EchoServerTcp {
 			cSocket.close();
 			
 			// クライアントから "quit" が送られてきたらループを抜けて終了
-			if (str.equals("quit")) {
+			if (name.equals("quit")) {
 				break;
 			}
 		}
@@ -66,5 +68,16 @@ public class EchoServerTcp {
 		// サーバソケットのクローズ
 		svSocket.close();
 	}
+    // おみくじ結果をランダムに返すメソッド（0〜3の乱数で分岐）
+    private static String getOmikuji() {
+        int random = new Random().nextInt(4);
+
+        return switch (random) {
+            case 0 -> "大吉";
+            case 1 -> "中吉";
+            case 2 -> "小吉";
+            default -> "凶";
+        };
+    }
 
 }

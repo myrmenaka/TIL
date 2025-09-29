@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.Random;
 
-public class omikujiServer {
+public class omikujiServerUdp {
     // クライアントからの通信を受け付けるポート番号（0〜1023は予約済みなので避ける）
     public static final int SERVER_PORT = 30000;
 
@@ -36,7 +36,7 @@ public class omikujiServer {
             
             // メソッドチェーン
 //            StringBuilder sb = new StringBuilder();
-//            String echoStr = sb.append(str).append("さんの運勢は「").append(omikuji).append("」です").tostring();
+//            String echoStr = sb.append(name).append("さんの運勢は「").append(omikuji).append("」です").tostring();
 //            byte[] sendData = echoStr.getBytes();
             
             // 送信する文字列（結果）をバイト配列に変換
