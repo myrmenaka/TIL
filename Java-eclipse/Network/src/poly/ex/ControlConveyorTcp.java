@@ -18,8 +18,10 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 public class ControlConveyorTcp {
-	private static final String IP = "172.16.110.174";		//PLCのIPアドレス
-	private static final int PORT = 0xC000; // PLCポート番号
+	//PLCのIPアドレス
+	private static final String IP = "172.16.110.174";
+	// PLCポート番号
+	private static final int PORT = 0xC000; 
 
 	// MCプロトコル（1Eフレーム）ASCIIコード交信：コンベア制御コマンド（末尾2文字が未完）
 	private static final String PLC_CONV_COMMAND_HEAD = "02FF00025920000000140200";
@@ -69,18 +71,25 @@ public class ControlConveyorTcp {
 
 					// 送信
 					// dos.writeUTF(msg); // 先頭に余計な2バイト(00 1a)が付くので×
-					dos.writeBytes(msg); // 文字列をバイト配列にして送信
-					dos.flush(); // 出力ストリームのフラッシュ
+					// 文字列をバイト配列にして送信
+					dos.writeBytes(msg);
+					// 出力ストリームのフラッシュ
+					dos.flush();
 
 					// 受信
 					// msg = dis.readUTF(); // バイト配列の受けだと、文字列の終わりを判断できないので×
-					byte[] receiveMsg = new byte[1024]; // 受信データ用バイト配列
-					socket.setSoTimeout(500); // タイムアウトを0.5秒で設定
-					int n = dis.read(receiveMsg); // 受信待ち → 受信データをreceiveMsgに格納。receiveMsg[5]-[1023] ← 0 (8200の場合)
+					// 受信データ用バイト配列
+					byte[] receiveMsg = new byte[1024];
+					// タイムアウトを0.5秒で設定
+					socket.setSoTimeout(500);
+					// 受信待ち → 受信データをreceiveMsgに格納。receiveMsg[5]-[1023] ← 0 (8200の場合)
+					int n = dis.read(receiveMsg);
 
 					System.out.print("PLCからの応答: ");
-					System.out.print(new String(receiveMsg, 0, n)); // byte[]の0番目の要素からn個取り出す
-					System.out.println(" (" + n + "文字)"); // n ← 4 (8200の場合)
+					// byte[]の0番目の要素からn個取り出す
+					System.out.print(new String(receiveMsg, 0, n));
+					// n ← 4 (8200の場合)
+					System.out.println(" (" + n + "文字)");
 					System.out.println();
 				}
 			} catch (IOException e) {
