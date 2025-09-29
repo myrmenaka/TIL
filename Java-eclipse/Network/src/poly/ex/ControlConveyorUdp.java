@@ -19,7 +19,7 @@ public class ControlConveyorUdp {
 	private static final int PORT = 0xC000;
 	
 	// MCプロトコル（1Eフレーム）ASCIIコード交信 ： コンベア制御コマンド（末尾2文字が未完）
-	private static final String PLC_CONV_COMMAND_HEAD = "02FF00025920000000200200";
+	private static final String PLC_CONV_COMMAND_HEAD = "02FF00025920000000140200";
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {

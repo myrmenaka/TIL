@@ -4,7 +4,7 @@ package poly.ex;
  * ・IPアドレス：172.16.110.〇〇
  * ・サブネットマスクパターン：255.255.255.0
  * ・デフォルトルータIPアドレス：172.16.110.254
- * ・ポート番号：49152（16進数ではC000）
+ * ・ポート番号：49153（16進数ではC000）
  * ・通信方法：ASCIIコード交信
  * 	・TCP,MCプロトコル
  * 	・UDP,MCプロトコル
@@ -21,7 +21,7 @@ public class ControlConveyorTcp {
 	//PLCのIPアドレス
 	private static final String IP = "172.16.110.174";
 	// PLCポート番号
-	private static final int PORT = 0xC000; 
+	private static final int PORT = 0xC001; 
 
 	// MCプロトコル（1Eフレーム）ASCIIコード交信：コンベア制御コマンド（末尾2文字が未完）
 	private static final String PLC_CONV_COMMAND_HEAD = "02FF00025920000000140200";
