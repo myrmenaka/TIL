@@ -5,7 +5,12 @@ public class ArrayListExample {
 
 	public static void main(String[] args) {
 		// ArrayListのインスタンスを生成（空）
-		ArrayList<String> month = new ArrayList<>();
+//		ArrayList<String> month = new ArrayList<>();
+		
+		// ArrayListのインターフェースList型でインスタンス生成すると
+		// ポリモーフィズム（多態性）なプログラムを記述することができる
+		// ※よく使われるのはこっち
+		List<String> month = new ArrayList<>();
 		
 		// addメソッドで"January"、"February"、"March"を要素の末尾に追加
 		month.add("January"); // 0
