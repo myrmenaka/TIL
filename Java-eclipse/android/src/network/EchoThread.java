@@ -1,3 +1,4 @@
+// 受信側
 package network;
 
 import java.io.IOException;

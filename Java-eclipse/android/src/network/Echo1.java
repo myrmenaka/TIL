@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Echo1 {
 	//ポート番号
-	static final int portNo = 30000;
+	static final int portNo = 49152;
 	
 	public static void main(String[] args) {
 		//コマンドライン引数のチェック
