@@ -7,7 +7,7 @@ import java.nio.channels.SocketChannel;
 
 public class MultiEchoServer {
 	//ポート番号
-	static final int portNo = 49152;
+	static final int portNo = 30000;
 	
 	public static void main(String [] args) {
 		//ServerSocketChannel
