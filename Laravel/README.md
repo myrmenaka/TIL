@@ -17,7 +17,9 @@ Laravel の学習記録をまとめるフォルダです。
 - [controller](./controller/README.md)  
 - [migration](./migration/README.md)  
 - [route](./route/README.md)  
-- []()  
+- [Blade](./Blade/README.md)
+- [Validation](./Validation/README.md)
+- 
 
 
 ## 記録の目的

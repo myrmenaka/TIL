@@ -14,6 +14,7 @@
 - [PHP](./PHP/README.md)
 - [Java](./Java/README.md)
 - [Java - eclipse](./Java-eclipse/README.md)
+<<<<<<< HEAD
 - [Laravel](./Laravel/README.md)  
 - [HTML](./HTML/README.md)  
 - [CSS](./CSS/README.md)  
@@ -28,6 +29,10 @@
 - []()  
 - []()  
 ---
+=======
+- [Laravel](./Laravel/README.md)
+- 
+>>>>>>> 5e8768862a4c2ebc500870b4befe5cce1d7eba7c
 
 ## 記録の目的
 
@@ -42,5 +47,7 @@
 
 ---
 参考: [Eclipseで作成した新規プロジェクトをGithubと連携する方法](https://qiita.com/yasushi-jp/items/806230a77a2be3855c9d)
+
+
 
 
