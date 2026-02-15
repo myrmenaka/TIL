@@ -14,7 +14,6 @@
 - [PHP](./PHP/README.md)
 - [Java](./Java/README.md)
 - [Java - eclipse](./Java-eclipse/README.md)
-<<<<<<< HEAD
 - [Laravel](./Laravel/README.md)  
 - [HTML](./HTML/README.md)  
 - [CSS](./CSS/README.md)  
@@ -29,10 +28,6 @@
 - []()  
 - []()  
 ---
-=======
-- [Laravel](./Laravel/README.md)
-- 
->>>>>>> 5e8768862a4c2ebc500870b4befe5cce1d7eba7c
 
 ## 記録の目的
 
