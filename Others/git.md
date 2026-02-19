@@ -63,7 +63,10 @@ git commit -m "first commit"
 `add` ＝ `ステージング`  
 `commit -m` `"コミットのコメント"`
 
-※ `.`はカレントディレクトリ
+※ `.`はカレントディレクトリ  
+※ `-m` → message の略  
+ → `git commit` だけだと、エディタ（VSCode や Vim）が開いて
+コミットメッセージを手動で書くモードになる
 
 ### ⑦ GitHub に push（初回）
 ```
