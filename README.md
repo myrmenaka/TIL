@@ -21,6 +21,7 @@
 - [JavaScript-vt](./JavaScript-vt/README.md)  
 - []()  
 - []()  
+- [Others](./Others/README.md)  
 - []()  
 
 ---
